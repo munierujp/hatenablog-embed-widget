@@ -1,0 +1,23 @@
+body {
+  background-color: #fafafa;
+}
+
+#header, #main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#input, #code, #preview {
+  width: 100%;
+  max-width: 600px;
+}
+
+#input input {
+  width: 100%;
+}
+
+#preview {
+  height: calc(155px + 8px * 2);
+  border: none;
+}
