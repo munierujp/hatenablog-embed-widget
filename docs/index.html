@@ -1,33 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<style>
-  body {
-    height: 100vh;
-    background-color: #fafafa;
-  }
 
-  main {
-    width: 464px;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>hatenablog-embed-widget</title>
 </head>
+
 <body>
-<main>
-  <script
-    async
-    src="widget.js"
-    class="jp-munieru-hatenablog-embed-widget"
-    data-url="https://munieru.jp/"
-    data-image="https://munieru.jp/icon.png"
-    data-title="munieru.jp"
-    data-body="Munieru 's website"></script>
-</main>
+  <div id="app">
+    <header id="header">
+      <h1>hatenablog-embed-widget</h1>
+    </header>
+    <main id="main">
+      <h2>Parameters</h2>
+      <div id="input">
+        <label>
+          <div>URL</div>
+          <input
+            type="url"
+            v-model="url"
+            required>
+        </label>
+        <label>
+          <div>Image URL (optional)</div>
+          <input
+            type="url"
+            v-model="image">
+        </label>
+        <label>
+          <div>Title</div>
+          <input
+            type="text"
+            v-model="title"
+            required>
+        </label>
+        <label>
+          <div>Body</div>
+          <input
+            type="text"
+            v-model="body"
+            required>
+        </label>
+      </div>
+      <h2>Code</h2>
+      <textarea
+        id="code"
+        v-text="code"
+        readonly></textarea>
+      <h2>Preview</h2>
+      <iframe
+        id="preview"
+        :srcdoc="html"></iframe>
+    </main>
+  </div>
+  <script src="script.js"></script>
 </body>
+
 </html>
