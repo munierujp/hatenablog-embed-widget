@@ -9,13 +9,15 @@ body {
   margin-top: 80px;
 }
 
-#input, #code, #preview {
-  width: 100%;
+#input input,
+#code,
+#preview {
+  width: calc(100vw - 8px *2);
   max-width: 600px;
 }
 
-#input input {
-  width: 100%;
+#code {
+  height: 60px;
 }
 
 #preview {
